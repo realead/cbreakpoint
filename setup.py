@@ -13,25 +13,16 @@ else:
 
 
 
-try:
-   from Cython.Build import cythonize
-   extensions = [
-    Extension("cbreakpoint", ["src/cbreakpoint.pyx"],
-        extra_compile_args=extra_compile_args),
-   ]
-   extensions =  cythonize(extensions, language_level = "3")
-except ImportError:
-   #fall back to pre-generated c-file:
-   extensions = [
-    Extension("cbreakpoint", ["src/cbreakpoint.c"],
-        extra_compile_args=extra_compile_args),
-   ]
+
+extensions = [  Extension("cbreakpoint", ["src/cbreakpoint.c"],
+                           extra_compile_args=extra_compile_args),
+             ]
 
 
 
 kwargs = {
       'name':'cbreakpoint',
-      'version':'0.1.0',
+      'version':'0.2.0',
       'description':'a tool for setting c-breakpoints in py-scripts',
       'author':'Egor Dranischnikow',
       'url':'https://github.com/realead/cbreakpoint',

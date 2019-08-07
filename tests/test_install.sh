@@ -6,13 +6,8 @@ virtualenv -p python3 "$ENV_DIR"
 #activate environment
 . "$ENV_DIR/bin/activate"
 
-#install needed packages:
-if [ "$1" = "with-cython" ]; then
-    pip install cython
-fi;
 
-
-if [ "$2" = "from-github" ]; then
+if [ "$1" = "from-github" ]; then
     echo "Installing setup.py from github..."
     pip install https://github.com/realead/cbreakpoint/zipball/master
 else
@@ -34,7 +29,7 @@ pip freeze
 (cd unit_tests && python -m unittest discover -s . -v)
 
 #clean or keep the environment
-if [ "$3" = "keep" ]; then
+if [ "$2" = "keep" ]; then
    echo "keeping enviroment $ENV_DIR"
 else
    rm -r "$ENV_DIR"

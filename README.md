@@ -8,7 +8,6 @@ Essentials:
 
  - Python 3 (tested with Python 3.7)
  - c-build chain
- - optional Cython
     
 
 Additional dependencies for tests:
@@ -57,15 +56,16 @@ gdb stops at `cbreakpoint(1)`.
 
 It is also possible to stop only at `cbreakpoint(1)`, for that use:
 
-    [gdb] src/cbreakpoint.c:595 if breakpoint_id == 1
+    [gdb] break src/cbreakpoint.c:12 if breakpoint_id == 1
 
-The line number - 595 - might vary if Cython-installation was used.
+to get the cbreakpoint-line use `condition_line()` which return `12` in the current vesion.
 
 
 ## Versions:
 
   0.1.0: Proof of concept with help of Cython
+  0.2.0: As C-extension without Cython dependency
 
 ## Outlook:
 
-  * version without cython
+  * nothing
