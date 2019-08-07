@@ -63,8 +63,8 @@ to get the cbreakpoint-line use `condition_line()` which return `12` in the curr
 
 ## Versions:
 
-  0.1.0: Proof of concept with help of Cython
-  0.2.0: As C-extension without Cython dependency
+  * 0.1.0: Proof of concept with help of Cython
+  * 0.2.0: As C-extension without Cython dependency
 
 ## Outlook:
 
